@@ -1,19 +1,20 @@
 <template>
 	<view class="content">
 		<view class="uni-list">
+			<swiper style="width: 100%; height: 40%;" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500">
+					<swiper-item v-for="item in news" :key="item">
+						<image :src="item.images[0]" @tap="opendet" :data-newsid="item.id"></image>
+					</swiper-item>
+				</swiper>
 			<!-- <navigator url="">页面跳转</navigator> -->
 			<view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item,index) in news" :key="index" @tap="opendet" :data-newsid="item.id">
 				<view class="uni-media-list">
-			
 						<image class="uni-media-list-logo" :src="item.images[0]"></image>
 						<view class="uni-media-list-body">
 							<view class="uni-media-list-text-top">{{item.title}}</view>
-							<view class="uni-media-list-text-bottom uni-ellipsis">{{item.ga_prefix }}</view>
 						</view>
-			
 				</view>
 			</view>
-
 		</view>
 	</view>
 </template>
@@ -53,9 +54,12 @@
 <style>
 	.uni-media-list-body {
 		height: auto;
+		line-height: auto;
 	}
 
 	.uni-media-list-text-top {
-		line-height: 1.6em;
+		line-height: 2em;
+	}
+	.uni-media-list-logo{
 	}
 </style>

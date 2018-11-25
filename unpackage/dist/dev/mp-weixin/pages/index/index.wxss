@@ -1,7 +1,8 @@
 
 .uni-media-list-body {
   height: auto;
+  line-height: auto;
 }
 .uni-media-list-text-top {
-  line-height: 1.6em;
+  line-height: 2em;
 }
